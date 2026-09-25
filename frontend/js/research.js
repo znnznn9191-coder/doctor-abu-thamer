@@ -119,7 +119,7 @@ class ResearchApp {
         </div>
       `;
 
-      card.querySelector('[data-open-id]').addEventListener('click', () => this.selectResearch(research.id));
+      card.querySelector('[data-open-id]').addEventListener('click', async () => { await this.selectResearch(research.id); document.querySelector('.workspace').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
       card.querySelector('[data-delete-id]').addEventListener('click', () => this.deleteResearch(research.id));
       this.researchList.appendChild(card);
     });
@@ -465,4 +465,5 @@ class ResearchApp {
 }
 
 window.ResearchApp = ResearchApp;
+
 

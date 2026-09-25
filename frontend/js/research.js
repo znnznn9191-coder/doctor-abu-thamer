@@ -31,6 +31,7 @@ class ResearchApp {
     this.historyList = document.getElementById('history-list');
     this.reviewButton = document.getElementById('run-review-btn');
     this.newResearchButton = document.getElementById('new-research-btn');
+    this.myResearchesButton = document.getElementById('my-researches-btn');
   }
 
   async init() {
@@ -54,6 +55,12 @@ class ResearchApp {
     this.newResearchButton.addEventListener('click', () => {
       this.resetForm();
     });
+
+    if (this.myResearchesButton) {
+      this.myResearchesButton.addEventListener('click', () => {
+        this.researchList.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
 
     this.reviewButton.addEventListener('click', () => this.runReview());
 
@@ -458,3 +465,4 @@ class ResearchApp {
 }
 
 window.ResearchApp = ResearchApp;
+

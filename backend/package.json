@@ -4,15 +4,21 @@
   "description": "منصة أبو ثامر للأبحاث — تطبيق محلي لإدارة البحث الأكاديمي",
   "main": "server.js",
   "scripts": {
-    "start": "npx -y node@20 server.js",
-    "dev": "npx -y node@20 server.js"
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": "20.x"
   },
   "author": "Doctor Abu Thamer",
   "license": "MIT",
   "dependencies": {
-    "better-sqlite3": "^11.7.0",
     "cors": "^2.8.5",
     "express": "^4.21.2",
+    "pg": "^8.16.3",
     "uuid": "^11.0.2"
+  },
+  "devDependencies": {
+    "better-sqlite3": "^11.7.0"
   }
 }

@@ -7,7 +7,7 @@ const { ensureResearchSpecialist, listRegisteredAgents } = require('../research_
 const { buildResearchContext } = require('../research_core/research_context');
 
 async function runValidation() {
-  storage.initializeDatabase();
+  await storage.initializeDatabase();
   const stages = pipeline.stageOrder;
   const agentNames = stages.map((stage) => stage.name);
   const registered = listRegisteredAgents();
@@ -21,11 +21,11 @@ async function runValidation() {
     }
   });
   const allStagesUseResearchCore = stages.every((stage) => Boolean(stage.module.research_core && stage.module.research_core.research_principles));
-  const demo = storage.listResearches().find((research) => research.title === 'أثر استخدام المنصات الرقمية في تحسين جودة التعلم لدى طلاب الجامعات السعودية');
+  const demo = (await storage.listResearches()).find((research) => research.title === 'أثر استخدام المنصات الرقمية في تحسين جودة التعلم لدى طلاب الجامعات السعودية');
 
   if (!demo) throw new Error('Required demo research was not found.');
-  const sources = storage.listSources(demo.id);
-  const sections = storage.listSections(demo.id);
+  const sources = await storage.listSources(demo.id);
+  const sections = await storage.listSections(demo.id);
   const sourceSnapshot = JSON.stringify(sources);
   const localProvider = providerRegistry.getDefaultProvider();
   const originalGenerate = localProvider.generate.bind(localProvider);

@@ -4,8 +4,8 @@ const { runPipeline } = require('./research_pipeline');
 const { DB_PATH, DEFAULT_PROVIDER } = require('../config');
 
 async function main() {
-  storage.initializeDatabase();
-  const matches = storage.listResearches().filter((research) => research.title === project.research.title);
+  await storage.initializeDatabase();
+  const matches = (await storage.listResearches()).filter((research) => research.title === project.research.title);
 
   if (matches.length > 1) {
     throw new Error('More than one research record has the requested title; refusing to create or update duplicates.');
@@ -14,7 +14,7 @@ async function main() {
   let research = matches[0];
   if (!research) {
     const fullDraft = project.sections.map((section) => `${section.title}\n${section.content}`).join('\n\n');
-    research = storage.createResearch({
+    research = await storage.createResearch({
       ...project.research,
       researcher_draft: fullDraft,
       status: 'draft',
@@ -22,15 +22,15 @@ async function main() {
     });
   }
 
-  const savedSections = storage.listSections(research.id);
+  const savedSections = await storage.listSections(research.id);
   const savedOrders = new Set(savedSections.map((section) => Number(section.sort_order)));
   for (const section of project.sections) {
     if (!savedOrders.has(section.sort_order)) {
-      storage.createSection(research.id, section);
+      await storage.createSection(research.id, section);
     }
   }
 
-  const sections = storage.listSections(research.id);
+  const sections = await storage.listSections(research.id);
   if (sections.length !== 23) {
     throw new Error(`Expected 23 saved research sections; found ${sections.length}.`);
   }
@@ -43,12 +43,12 @@ async function main() {
       database: DB_PATH,
       sectionCount: sections.length,
       readiness: research.readiness_status,
-      duplicateCount: storage.listResearches().filter((item) => item.title === project.research.title).length
+      duplicateCount: (await storage.listResearches()).filter((item) => item.title === project.research.title).length
     }, null, 2));
     return;
   }
 
-  const sources = storage.listSources(research.id);
+  const sources = await storage.listSources(research.id);
   const fullDraft = research.researcher_draft || sections.map((section) => `${section.title}\n${section.content}`).join('\n\n');
   const review = await runPipeline({ ...research, language: 'ar', sources, sections });
   const finalWriter = review.stages.find((stage) => stage.stage === 'final_writer');
@@ -56,7 +56,7 @@ async function main() {
     ? review.artifacts.professor_reviewed_draft
     : research.final_approved_draft || '';
 
-  const saved = storage.updateResearch(research.id, {
+  const saved = await storage.updateResearch(research.id, {
     status: review.summary.research_status,
     language: 'ar',
     generated_draft: finalWriter.output.draft,
@@ -72,16 +72,17 @@ async function main() {
     unresolved_issues: review.artifacts.unresolved_issues
   });
 
-  storage.recordHistory(research.id, 'review_completed', JSON.stringify(review.summary));
+  await storage.recordHistory(research.id, 'review_completed', JSON.stringify(review.summary));
 
-  const storedSources = storage.listSources(saved.id);
+  const storedSources = await storage.listSources(saved.id);
+  const allResearches = await storage.listResearches();
   const result = {
     reusedExistingRecord: false,
     id: saved.id,
     title: saved.title,
     database: DB_PATH,
     provider: DEFAULT_PROVIDER,
-    sectionCount: storage.listSections(saved.id).length,
+    sectionCount: (await storage.listSections(saved.id)).length,
     sourceCount: storedSources.length,
     verifiedSourceCount: storedSources.filter((source) => source.verification_status === 'verified').length,
     stageCount: review.stages.length,
@@ -96,7 +97,7 @@ async function main() {
     finalReviewPass: review.artifacts.review_report.final_review.pass,
     readinessStatus: saved.readiness_status,
     unresolvedIssues: JSON.parse(saved.unresolved_issues).length,
-    duplicateCount: storage.listResearches().filter((item) => item.title === project.research.title).length
+    duplicateCount: allResearches.filter((item) => item.title === project.research.title).length
   };
 
   console.log(JSON.stringify(result, null, 2));

@@ -4,8 +4,8 @@ function sendJson(res, status, payload) {
   return res.status(status).json(payload);
 }
 
-function listSources(req, res) {
-  const sources = storage.listSources(req.params.id);
+async function listSources(req, res) {
+  const sources = await storage.listSources(req.params.id);
   return sendJson(res, 200, {
     success: true,
     count: sources.length,
@@ -13,9 +13,9 @@ function listSources(req, res) {
   });
 }
 
-function createSource(req, res) {
+async function createSource(req, res) {
   const researchId = req.params.id;
-  const item = storage.createSource(researchId, req.body || {});
+  const item = await storage.createSource(researchId, req.body || {});
 
   return sendJson(res, 201, {
     success: true,
@@ -24,8 +24,8 @@ function createSource(req, res) {
   });
 }
 
-function updateSource(req, res) {
-  const item = storage.updateSource(req.params.id, req.body || {});
+async function updateSource(req, res) {
+  const item = await storage.updateSource(req.params.id, req.body || {});
 
   if (!item) {
     return sendJson(res, 404, {
@@ -41,8 +41,8 @@ function updateSource(req, res) {
   });
 }
 
-function deleteSource(req, res) {
-  const deleted = storage.deleteSource(req.params.id);
+async function deleteSource(req, res) {
+  const deleted = await storage.deleteSource(req.params.id);
 
   if (!deleted) {
     return sendJson(res, 404, {

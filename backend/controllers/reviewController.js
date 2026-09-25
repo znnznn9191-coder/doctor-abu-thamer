@@ -2,7 +2,7 @@ const storage = require('../services/storage');
 const { runPipeline } = require('../services/research_pipeline');
 
 async function runReview(req, res) {
-  const research = storage.getResearchById(req.params.id);
+  const research = await storage.getResearchById(req.params.id);
 
   if (!research) {
     return res.status(404).json({
@@ -12,8 +12,8 @@ async function runReview(req, res) {
   }
 
   try {
-    const sources = storage.listSources(research.id);
-    const sections = storage.listSections(research.id);
+    const sources = await storage.listSources(research.id);
+    const sections = await storage.listSections(research.id);
 
     const review = await runPipeline({
       ...research,
@@ -32,7 +32,7 @@ async function runReview(req, res) {
       BLOCKED: 'يحتاج مصدر موثّق'
     };
 
-    storage.updateResearch(research.id, {
+    await storage.updateResearch(research.id, {
       status: review.summary.research_status,
       generated_draft: generatedDraft,
       reviewed_draft: artifacts.reviewed_draft || '',
@@ -45,7 +45,7 @@ async function runReview(req, res) {
       readiness_status: artifacts.readiness_status || 'NEEDS_REPAIR',
       unresolved_issues: artifacts.unresolved_issues || []
     });
-    storage.recordHistory(research.id, 'review_completed', JSON.stringify(review.summary || { status: 'review_completed' }));
+    await storage.recordHistory(research.id, 'review_completed', JSON.stringify(review.summary || { status: 'review_completed' }));
 
     return res.json({
       success: true,
@@ -61,11 +61,10 @@ async function runReview(req, res) {
       }
     });
   } catch (error) {
-    console.error('Review pipeline failed', error);
+    console.error('Review pipeline failed:', error.message);
     return res.status(500).json({
       success: false,
-      message: 'فشل في تنفيذ مراجعة البحث.',
-      error: error.message
+      message: 'فشل في تنفيذ مراجعة البحث.'
     });
   }
 }

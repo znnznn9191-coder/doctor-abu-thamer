@@ -4,8 +4,8 @@ function sendJson(res, status, payload) {
   return res.status(status).json(payload);
 }
 
-function listResearches(req, res) {
-  const researches = storage.listResearches();
+async function listResearches(req, res) {
+  const researches = await storage.listResearches();
   return sendJson(res, 200, {
     success: true,
     count: researches.length,
@@ -13,7 +13,7 @@ function listResearches(req, res) {
   });
 }
 
-function createResearch(req, res) {
+async function createResearch(req, res) {
   const payload = req.body || {};
 
   if (!payload.title || String(payload.title).trim() === '') {
@@ -23,7 +23,7 @@ function createResearch(req, res) {
     });
   }
 
-  const research = storage.createResearch(payload);
+  const research = await storage.createResearch(payload);
   return sendJson(res, 201, {
     success: true,
     message: 'تم حفظ البحث بنجاح.',
@@ -31,8 +31,8 @@ function createResearch(req, res) {
   });
 }
 
-function getResearchById(req, res) {
-  const research = storage.getResearchById(req.params.id);
+async function getResearchById(req, res) {
+  const research = await storage.getResearchById(req.params.id);
 
   if (!research) {
     return sendJson(res, 404, {
@@ -47,8 +47,8 @@ function getResearchById(req, res) {
   });
 }
 
-function updateResearch(req, res) {
-  const research = storage.updateResearch(req.params.id, req.body || {});
+async function updateResearch(req, res) {
+  const research = await storage.updateResearch(req.params.id, req.body || {});
 
   if (!research) {
     return sendJson(res, 404, {
@@ -64,8 +64,8 @@ function updateResearch(req, res) {
   });
 }
 
-function deleteResearch(req, res) {
-  const deleted = storage.deleteResearch(req.params.id);
+async function deleteResearch(req, res) {
+  const deleted = await storage.deleteResearch(req.params.id);
 
   if (!deleted) {
     return sendJson(res, 404, {
@@ -80,8 +80,8 @@ function deleteResearch(req, res) {
   });
 }
 
-function getResearchDetails(req, res) {
-  const research = storage.getResearchById(req.params.id);
+async function getResearchDetails(req, res) {
+  const research = await storage.getResearchById(req.params.id);
 
   if (!research) {
     return sendJson(res, 404, {
@@ -90,9 +90,9 @@ function getResearchDetails(req, res) {
     });
   }
 
-  const sections = storage.listSections(research.id);
-  const sources = storage.listSources(research.id);
-  const history = storage.getResearchHistory(research.id);
+  const sections = await storage.listSections(research.id);
+  const sources = await storage.listSources(research.id);
+  const history = await storage.getResearchHistory(research.id);
 
   return sendJson(res, 200, {
     success: true,

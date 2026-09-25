@@ -4,8 +4,8 @@ const { runPipeline } = require('./research_pipeline');
 const { DB_PATH, DEFAULT_PROVIDER } = require('../config');
 
 async function main() {
-  storage.initializeDatabase();
-  const matches = storage.listResearches().filter((research) => research.title === bibliography.research_title);
+  await storage.initializeDatabase();
+  const matches = (await storage.listResearches()).filter((research) => research.title === bibliography.research_title);
   if (matches.length !== 1) {
     throw new Error(`Expected exactly one saved research with the required title; found ${matches.length}.`);
   }
@@ -14,7 +14,7 @@ async function main() {
   const expectedId = '77e4f887-baf9-4f65-a2f0-f2dcf96cb55e';
   if (research.id !== expectedId) throw new Error('The saved research ID changed; refusing to attach sources to another record.');
 
-  const existingSources = storage.listSources(research.id);
+  const existingSources = await storage.listSources(research.id);
   let sourcesAdded = 0;
   let sourcesVerified = 0;
 
@@ -28,22 +28,22 @@ async function main() {
     });
 
     if (duplicate) {
-      storage.updateSource(duplicate.id, sourceData);
+      await storage.updateSource(duplicate.id, sourceData);
     } else {
-      storage.createSource(research.id, sourceData);
+      await storage.createSource(research.id, sourceData);
       sourcesAdded += 1;
     }
     sourcesVerified += 1;
   }
 
-  const sources = storage.listSources(research.id);
+  const sources = await storage.listSources(research.id);
   const doiValues = sources.map((source) => String(source.doi || '').trim().toLocaleLowerCase()).filter(Boolean);
   if (new Set(doiValues).size !== doiValues.length) throw new Error('Duplicate DOI records detected; pipeline will not run.');
   if (!bibliography.sources.every((item) => sources.some((source) => source.doi === item.doi && source.verification_status === 'verified'))) {
     throw new Error('A required source did not persist as verified; pipeline will not run.');
   }
 
-  const sections = storage.listSections(research.id);
+  const sections = await storage.listSections(research.id);
   if (sections.length !== 23) throw new Error(`Expected 23 saved sections; found ${sections.length}.`);
 
   let sectionsUpdated = 0;
@@ -51,12 +51,12 @@ async function main() {
     const section = sections.find((item) => item.section_type === sectionType);
     if (!section) throw new Error(`Required saved section is missing: ${sectionType}.`);
     if (section.content !== content) {
-      storage.updateSection(section.id, { content });
+      await storage.updateSection(section.id, { content });
       sectionsUpdated += 1;
     }
   }
 
-  const updatedSections = storage.listSections(research.id);
+  const updatedSections = await storage.listSections(research.id);
   const sourcedDraft = updatedSections.map((section) => `${section.title}\n${section.content}`).join('\n\n');
   const notes = String(research.notes || '').replace(
     'لم تُجمع بيانات ميدانية ولم تُسجل مصادر متحققة بعد.',
@@ -74,7 +74,7 @@ async function main() {
   const finalWriter = review.stages.find((stage) => stage.stage === 'final_writer');
   const professorStage = review.stages.find((stage) => stage.stage === 'senior_academic_professor');
   const readiness = review.artifacts.readiness_status;
-  const saved = storage.updateResearch(research.id, {
+  const saved = await storage.updateResearch(research.id, {
     status: review.summary.research_status,
     notes,
     language: 'ar',
@@ -90,10 +90,11 @@ async function main() {
     unresolved_issues: review.artifacts.unresolved_issues
   });
 
-  storage.recordHistory(research.id, 'verified_sources_added', JSON.stringify({ added: sourcesAdded, verified: sourcesVerified }));
-  storage.recordHistory(research.id, 'review_completed', JSON.stringify(review.summary));
+  await storage.recordHistory(research.id, 'verified_sources_added', JSON.stringify({ added: sourcesAdded, verified: sourcesVerified }));
+  await storage.recordHistory(research.id, 'review_completed', JSON.stringify(review.summary));
 
   const report = review.artifacts.review_report;
+  const allResearches = await storage.listResearches();
   const result = {
     research_id: saved.id,
     research_title: saved.title,
@@ -135,7 +136,7 @@ async function main() {
     final_review: report.final_review.pass,
     readiness_status: saved.readiness_status,
     unresolved_issues: JSON.parse(saved.unresolved_issues),
-    duplicate_research_count: storage.listResearches().filter((item) => item.title === bibliography.research_title).length,
+    duplicate_research_count: allResearches.filter((item) => item.title === bibliography.research_title).length,
     duplicate_doi_count: doiValues.length - new Set(doiValues).size
   };
 

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const asyncHandler = require('./asyncHandler');
 
 const {
   listSources,
@@ -8,9 +9,9 @@ const {
   deleteSource
 } = require('../controllers/sourceController');
 
-router.get('/researches/:id/sources', listSources);
-router.post('/researches/:id/sources', createSource);
-router.put('/sources/:id', updateSource);
-router.delete('/sources/:id', deleteSource);
+router.get('/researches/:id/sources', asyncHandler(listSources));
+router.post('/researches/:id/sources', asyncHandler(createSource));
+router.put('/sources/:id', asyncHandler(updateSource));
+router.delete('/sources/:id', asyncHandler(deleteSource));
 
 module.exports = router;

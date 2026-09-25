@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const asyncHandler = require('./asyncHandler');
 
 const {
   listResearches,
@@ -10,11 +11,11 @@ const {
   getResearchDetails
 } = require('../controllers/researchController');
 
-router.get('/researches', listResearches);
-router.post('/researches', createResearch);
-router.get('/researches/:id', getResearchById);
-router.put('/researches/:id', updateResearch);
-router.delete('/researches/:id', deleteResearch);
-router.get('/researches/:id/details', getResearchDetails);
+router.get('/researches', asyncHandler(listResearches));
+router.post('/researches', asyncHandler(createResearch));
+router.get('/researches/:id', asyncHandler(getResearchById));
+router.put('/researches/:id', asyncHandler(updateResearch));
+router.delete('/researches/:id', asyncHandler(deleteResearch));
+router.get('/researches/:id/details', asyncHandler(getResearchDetails));
 
 module.exports = router;

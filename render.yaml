@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: doctor-abu-thamer
+    runtime: node
+    plan: free
+    region: oregon
+    rootDir: backend
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DEFAULT_PROVIDER
+        value: local
+      - key: PGSSLMODE
+        value: require
+      - key: DATABASE_URL
+        fromDatabase:
+          name: doctor-abu-thamer-db
+          property: connectionString
+
+databases:
+  - name: doctor-abu-thamer-db
+    databaseName: doctor_abu_thamer
+    user: doctor_abu_thamer
+    plan: 0.1c-256mb
+    region: oregon
+    postgresMajorVersion: '16'

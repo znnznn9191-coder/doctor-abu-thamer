@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const asyncHandler = require('./asyncHandler');
 
 const {
   listSections,
@@ -8,9 +9,9 @@ const {
   deleteSection
 } = require('../controllers/sectionController');
 
-router.get('/researches/:id/sections', listSections);
-router.post('/researches/:id/sections', createSection);
-router.put('/sections/:id', updateSection);
-router.delete('/sections/:id', deleteSection);
+router.get('/researches/:id/sections', asyncHandler(listSections));
+router.post('/researches/:id/sections', asyncHandler(createSection));
+router.put('/sections/:id', asyncHandler(updateSection));
+router.delete('/sections/:id', asyncHandler(deleteSection));
 
 module.exports = router;

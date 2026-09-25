@@ -1,3 +1,6 @@
+if (process.env.DATABASE_URL) {
+  module.exports = require('./postgres_storage');
+} else {
 const fs = require('fs');
 const path = require('path');
 const Database = require('better-sqlite3');
@@ -148,7 +151,7 @@ function getResearchById(id) {
 }
 
 function createResearch(data = {}) {
-  const id = getId();
+  const id = data.id || getId();
   const timestamp = now();
   const record = {
     id,
@@ -527,3 +530,4 @@ module.exports = {
   countResearches,
   createDemoResearch
 };
+}

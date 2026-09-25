@@ -4,8 +4,8 @@ function sendJson(res, status, payload) {
   return res.status(status).json(payload);
 }
 
-function listSections(req, res) {
-  const sections = storage.listSections(req.params.id);
+async function listSections(req, res) {
+  const sections = await storage.listSections(req.params.id);
   return sendJson(res, 200, {
     success: true,
     count: sections.length,
@@ -13,9 +13,9 @@ function listSections(req, res) {
   });
 }
 
-function createSection(req, res) {
+async function createSection(req, res) {
   const researchId = req.params.id;
-  const item = storage.createSection(researchId, req.body || {});
+  const item = await storage.createSection(researchId, req.body || {});
 
   return sendJson(res, 201, {
     success: true,
@@ -24,8 +24,8 @@ function createSection(req, res) {
   });
 }
 
-function updateSection(req, res) {
-  const item = storage.updateSection(req.params.id, req.body || {});
+async function updateSection(req, res) {
+  const item = await storage.updateSection(req.params.id, req.body || {});
 
   if (!item) {
     return sendJson(res, 404, {
@@ -41,8 +41,8 @@ function updateSection(req, res) {
   });
 }
 
-function deleteSection(req, res) {
-  const deleted = storage.deleteSection(req.params.id);
+async function deleteSection(req, res) {
+  const deleted = await storage.deleteSection(req.params.id);
 
   if (!deleted) {
     return sendJson(res, 404, {

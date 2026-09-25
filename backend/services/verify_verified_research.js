@@ -4,12 +4,12 @@ require('./research_pipeline');
 const { DB_PATH, DEFAULT_PROVIDER } = require('../config');
 const { listRegisteredAgents } = require('../research_core/agent_registry');
 
-function main() {
-  storage.initializeDatabase();
-  const matches = storage.listResearches().filter((research) => research.title === bibliography.research_title);
+async function main() {
+  await storage.initializeDatabase();
+  const matches = (await storage.listResearches()).filter((research) => research.title === bibliography.research_title);
   const research = matches[0] || null;
-  const sources = research ? storage.listSources(research.id) : [];
-  const sections = research ? storage.listSections(research.id) : [];
+  const sources = research ? await storage.listSources(research.id) : [];
+  const sections = research ? await storage.listSections(research.id) : [];
   const report = research ? JSON.parse(research.review_report || '{}') : {};
   const references = sections.find((section) => section.section_type === 'references');
   const registeredAgents = listRegisteredAgents();
@@ -74,9 +74,7 @@ function main() {
   return result;
 }
 
-try {
-  main();
-} catch (error) {
+main().catch((error) => {
   console.error(error.stack || error);
   process.exit(1);
-}
+});

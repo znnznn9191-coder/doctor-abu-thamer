@@ -58,3 +58,42 @@
 
 ## التطوير داخل VS Code
 افتح مجلد `doctor-abu-thamer` كاملاً في VS Code.
+
+## Bilingual Language Architecture + Scopus Integration
+
+The platform is bilingual from the core, not only at the UI level.
+
+Supported primary locales:
+- `ar` — native Arabic
+- `en` — native English
+
+Every research project may define:
+- `input_language`
+- `research_language`
+- `source_search_language`
+- `output_language`
+
+The language layer must support:
+- native Arabic academic phrasing
+- native English academic phrasing
+- academic query normalization
+- bilingual terminology mapping
+- Arabic-to-English scholarly search expansion
+- English-to-Arabic scholarly presentation
+- preservation of source titles, authors, DOI, identifiers, and metadata in their original form
+
+External academic search must use a centralized integration layer.
+
+Scopus architecture:
+
+Scopus
+→ Scopus Connector
+→ Source Discovery
+→ Verified Sources
+→ Research Core
+→ All research and review stages
+
+Agents must not connect to Scopus directly.
+All Scopus results must pass through a centralized connector, normalization, validation, and verified-source layer before entering the research context.
+
+The language layer must be reusable for future academic integrations such as Crossref, PubMed, Web of Science, or other scholarly databases without changing the core research pipeline.

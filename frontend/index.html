@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>منصة أبو ثامر للأبحاث</title>
+    <meta
+      name="description"
+      content="منصة أبو ثامر للأبحاث لإدارة المشاريع البحثية الأكاديمية، تنظيم المصادر، والمراجعة العلمية المنضبطة."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="nav-shell">
+        <div class="topbar">
+          <div class="brand">
+            <span>منصة أبو ثامر للأبحاث</span>
+            <small class="brand-subtitle">منصة بحثية خاصة بالدكتور أبو ثامر</small>
+          </div>
+          <div class="top-actions">
+            <button id="new-research-btn" class="btn btn-secondary">بحث جديد</button>
+            <button class="btn btn-secondary">أبحاثي</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <aside class="sidebar">
+        <section class="panel section-panel">
+          <h2>بحث جديد</h2>
+          <form id="research-form">
+            <div class="field-group">
+              <label for="research-title">موضوع البحث</label>
+              <input id="research-title" name="title" type="text" placeholder="أدخل عنوان البحث" />
+            </div>
+
+            <div class="field-group">
+              <label for="research-field">التخصص</label>
+              <input id="research-field" name="field" type="text" value="التربية والتعليم" />
+            </div>
+
+            <div class="field-group">
+              <label for="research-type">نوع البحث</label>
+              <select id="research-type" name="research_type">
+                <option value="بحث أكاديمي">بحث أكاديمي</option>
+                <option value="مقترح بحثي">مقترح بحثي</option>
+                <option value="مراجعة أدبية">مراجعة أدبية</option>
+                <option value="ورقة علمية">ورقة علمية</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="research-level">المستوى</label>
+              <select id="research-level" name="level">
+                <option value="دراسات عليا">دراسات عليا</option>
+                <option value="جامعي">جامعي</option>
+                <option value="بحث مهني">بحث مهني</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="research-notes">تعليمات خاصة</label>
+              <textarea id="research-notes" name="notes" placeholder="اكتب ملاحظاتك أو توجيهاتك الأساسية..."></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-dark">حفظ</button>
+              <button type="button" id="run-review-btn" class="btn btn-primary">إعداد البحث</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel section-panel">
+          <h3>أبحاثي</h3>
+          <div id="research-list" class="research-list"></div>
+        </section>
+      </aside>
+
+      <section class="panel workspace">
+        <div class="workspace-header">
+          <h1 id="workspace-title">بحث جديد</h1>
+          <span id="readiness-status" class="small-badge">لم تجر مراجعة الجاهزية</span>
+        </div>
+
+        <div class="tabs" aria-label="أقسام البحث">
+          <button type="button" class="tab-button active" data-tab="overview">نظرة عامة</button>
+          <button type="button" class="tab-button" data-tab="problem">مشكلة البحث</button>
+          <button type="button" class="tab-button" data-tab="questions">أسئلة البحث</button>
+          <button type="button" class="tab-button" data-tab="objectives">الأهداف</button>
+          <button type="button" class="tab-button" data-tab="literature">الدراسات السابقة</button>
+          <button type="button" class="tab-button" data-tab="methodology">المنهجية</button>
+          <button type="button" class="tab-button" data-tab="sources">المصادر والمراجع</button>
+          <button type="button" class="tab-button" data-tab="final_review">المراجعة النهائية</button>
+        </div>
+
+        <div class="tab-panel active" id="panel-overview">
+          <h3>نظرة عامة</h3>
+          <textarea id="section-overview"></textarea>
+          <div class="tab-actions">
+            <button id="save-section-overview" type="button" class="btn btn-dark">حفظ القسم</button>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="panel-problem">
+          <h3>مشكلة البحث</h3>
+          <textarea id="section-problem"></textarea>
+          <div class="tab-actions">
+            <button id="save-section-problem" type="button" class="btn btn-dark">حفظ القسم</button>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="panel-questions">
+          <h3>أسئلة البحث</h3>
+          <textarea id="section-questions"></textarea>
+          <div class="tab-actions">
+            <button id="save-section-questions" type="button" class="btn btn-dark">حفظ القسم</button>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="panel-objectives">
+          <h3>الأهداف</h3>
+          <textarea id="section-objectives"></textarea>
+          <div class="tab-actions">
+            <button id="save-section-objectives" type="button" class="btn btn-dark">حفظ القسم</button>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="panel-literature">
+          <h3>الدراسات السابقة</h3>
+          <textarea id="section-literature"></textarea>
+          <div class="tab-actions">
+            <button id="save-section-literature" type="button" class="btn btn-dark">حفظ القسم</button>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="panel-methodology">
+          <h3>المنهجية</h3>
+          <textarea id="section-methodology"></textarea>
+          <div class="tab-actions">
+            <button id="save-section-methodology" type="button" class="btn btn-dark">حفظ القسم</button>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="panel-sources">
+          <h3>المصادر والمراجع</h3>
+          <textarea id="section-sources"></textarea>
+          <div class="tab-actions">
+            <button id="save-section-sources" type="button" class="btn btn-dark">حفظ القسم</button>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="panel-final_review">
+          <h3>المراجعة النهائية</h3>
+          <textarea id="section-final_review"></textarea>
+          <div class="tab-actions">
+            <button id="save-section-final_review" type="button" class="btn btn-dark">حفظ القسم</button>
+          </div>
+        </div>
+
+        <section class="saved-sections-section" aria-labelledby="saved-sections-heading">
+          <div class="saved-sections-header">
+            <h2 id="saved-sections-heading">محتويات البحث</h2>
+            <span id="saved-section-count" class="section-count">0 قسم</span>
+          </div>
+          <div id="saved-sections-list" class="saved-sections-list"></div>
+        </section>
+
+        <section id="saved-manuscript" class="saved-manuscript" aria-live="polite"></section>
+
+        <div id="review-message" style="display:none; margin-top:16px; background:#f6eed5; border:1px solid #dfc67a; border-radius:12px; padding:12px 14px; color:#1d2b3a; font-weight:700;"></div>
+
+        <div class="workspace-grid">
+          <section class="panel source-panel">
+            <h3>إدارة المصادر</h3>
+            <form id="source-form" class="source-form">
+              <div class="field-group wide">
+                <label for="source-title">العنوان</label>
+                <input id="source-title" name="title" type="text" placeholder="عنوان المصدر" />
+              </div>
+
+              <div class="field-group">
+                <label for="source-authors">المؤلفون</label>
+                <input id="source-authors" name="authors" type="text" placeholder="اسم المؤلف" />
+              </div>
+
+              <div class="field-group">
+                <label for="source-year">السنة</label>
+                <input id="source-year" name="year" type="text" placeholder="2024" />
+              </div>
+
+              <div class="field-group wide">
+                <label for="source-publisher">الدورية أو الناشر</label>
+                <input id="source-publisher" name="journal_or_publisher" type="text" placeholder="اسم الدورية أو الناشر" />
+              </div>
+
+              <div class="field-group wide">
+                <label for="source-url">الرابط</label>
+                <input id="source-url" name="url" type="url" placeholder="https://example.com" />
+              </div>
+
+              <div class="field-group">
+                <label for="source-doi">DOI</label>
+                <input id="source-doi" name="doi" type="text" placeholder="DOI إذا كان متاحاً" />
+              </div>
+
+              <div class="field-group">
+                <label for="source-type">نوع المصدر</label>
+                <select id="source-type" name="source_type">
+                  <option value="مرجع أكاديمي">مرجع أكاديمي</option>
+                  <option value="دورية">دورية</option>
+                  <option value="كتاب">كتاب</option>
+                  <option value="موقع رسمي">موقع رسمي</option>
+                </select>
+              </div>
+
+              <div class="field-group wide">
+                <label for="source-notes">ملاحظات</label>
+                <textarea id="source-notes" name="notes" placeholder="ملاحظات حول أهمية المصدر أو التوثيق..."></textarea>
+              </div>
+
+              <div class="form-actions wide">
+                <button type="submit" class="btn btn-dark">حفظ المصدر</button>
+              </div>
+            </form>
+
+            <div id="source-list" class="source-list"></div>
+          </section>
+
+          <section class="panel history-panel">
+            <h3>سجل النشاط</h3>
+            <ul id="history-list" class="history-list"></ul>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/research.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

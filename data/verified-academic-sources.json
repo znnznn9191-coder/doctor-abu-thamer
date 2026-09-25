@@ -1,0 +1,87 @@
+{
+  "research_title": "أثر استخدام المنصات الرقمية في تحسين جودة التعلم لدى طلاب الجامعات السعودية - نسخة تطبيقية كاملة",
+  "verified_at": "2026-09-25",
+  "verification_method": "Crossref DOI registration records were checked against publisher-hosted article records where accessible. Bibliographic identity is verified; relevance notes delimit what each source does and does not establish.",
+  "sources": [
+    {
+      "title": "A systematic review of research on online teaching and learning from 2009 to 2018",
+      "authors": "Florence Martin; Ting Sun; Carl D. Westine",
+      "year": "2020",
+      "journal_or_publisher": "Computers & Education, 159, Article 104009; Elsevier",
+      "url": "https://doi.org/10.1016/j.compedu.2020.104009",
+      "doi": "10.1016/j.compedu.2020.104009",
+      "source_type": "مقالة محكمة - مراجعة منهجية",
+      "citation_text": "Martin, F., Sun, T., & Westine, C. D. (2020). A systematic review of research on online teaching and learning from 2009 to 2018. Computers & Education, 159, Article 104009. https://doi.org/10.1016/j.compedu.2020.104009",
+      "verification_status": "verified",
+      "verified_at": "2026-09-25",
+      "verification_notes": "Exact title, three authors, year, journal, volume, article number, publisher and DOI confirmed in the Crossref DOI record. The ScienceDirect landing page returned HTTP 403 to the inspection tool; Crossref links this DOI to the publisher-maintained version. Supports describing the scope of online teaching/learning research reviews; it does not by itself establish an effect for Saudi universities or a specific platform."
+    },
+    {
+      "title": "Self-regulated learning strategies & academic achievement in online higher education learning environments: A systematic review",
+      "authors": "J. Broadbent; W. L. Poon",
+      "year": "2015",
+      "journal_or_publisher": "The Internet and Higher Education, 27, 1-13; Elsevier",
+      "url": "https://doi.org/10.1016/j.iheduc.2015.04.007",
+      "doi": "10.1016/j.iheduc.2015.04.007",
+      "source_type": "مقالة محكمة - مراجعة منهجية",
+      "citation_text": "Broadbent, J., & Poon, W. L. (2015). Self-regulated learning strategies & academic achievement in online higher education learning environments: A systematic review. The Internet and Higher Education, 27, 1-13. https://doi.org/10.1016/j.iheduc.2015.04.007",
+      "verification_status": "verified",
+      "verified_at": "2026-09-25",
+      "verification_notes": "Exact title, authors, year, journal, volume, pages, publisher and DOI confirmed in Crossref. Supports framing self-regulated learning strategies and academic achievement as review topics in online higher education; it does not validate outcomes for this saved study or a Saudi sample."
+    },
+    {
+      "title": "How Does Distance Education Compare With Classroom Instruction? A Meta-Analysis of the Empirical Literature",
+      "authors": "Robert M. Bernard; Philip C. Abrami; Yiping Lou; Evgueni Borokhovski; Anne Wade; Lori Wozney; Peter Andrew Wallet; Manon Fiset; Binru Huang",
+      "year": "2004",
+      "journal_or_publisher": "Review of Educational Research, 74(3), 379-439; American Educational Research Association / SAGE",
+      "url": "https://doi.org/10.3102/00346543074003379",
+      "doi": "10.3102/00346543074003379",
+      "source_type": "مقالة محكمة - تحليل تلوي",
+      "citation_text": "Bernard, R. M., Abrami, P. C., Lou, Y., Borokhovski, E., Wade, A., Wozney, L., Wallet, P. A., Fiset, M., & Huang, B. (2004). How does distance education compare with classroom instruction? A meta-analysis of the empirical literature. Review of Educational Research, 74(3), 379-439. https://doi.org/10.3102/00346543074003379",
+      "verification_status": "verified",
+      "verified_at": "2026-09-25",
+      "verification_notes": "Exact title, all nine authors, year, journal, volume, issue, pages and DOI confirmed on the SAGE/AERA article page and Crossref. The publisher abstract describes 232 studies and 688 outcomes, reports effects near zero overall with wide variability, and notes differences by delivery mode. Foundational context only; it is not evidence about current Saudi platforms."
+    },
+    {
+      "title": "The moderating effect of gender and age on the students' acceptance of learning management systems in Saudi higher education",
+      "authors": "Sami S. Binyamin; Malcolm J. Rutter; Sally Smith",
+      "year": "2020",
+      "journal_or_publisher": "Knowledge Management & E-Learning: An International Journal, 12(1), 30-62; Laboratory for Knowledge Management and E-Learning, The University of Hong Kong",
+      "url": "https://doi.org/10.34105/j.kmel.2020.12.003",
+      "doi": "10.34105/j.kmel.2020.12.003",
+      "source_type": "مقالة محكمة - دراسة كمية",
+      "citation_text": "Binyamin, S. S., Rutter, M. J., & Smith, S. (2020). The moderating effect of gender and age on the students' acceptance of learning management systems in Saudi higher education. Knowledge Management & E-Learning: An International Journal, 12(1), 30-62. https://doi.org/10.34105/j.kmel.2020.12.003",
+      "verification_status": "verified",
+      "verified_at": "2026-09-25",
+      "verification_notes": "Publisher article page confirms exact title and all three authors; Crossref confirms DOI, 2020 publication date, journal, volume and pages. Publisher abstract reports 851 submitted surveys, 833 analysed, from students registered in three Saudi universities; it examines LMS acceptance and reports a gender moderation of the content-quality/perceived-ease relationship, with no age moderation. It studies LMS acceptance, not demonstrated improvement in learning outcomes."
+    },
+    {
+      "title": "The impact of the COVID-19 pandemic on the adoption of e-learning among academics in Saudi Arabia",
+      "authors": "Ali Alammary; Moneer Alshaikh; Areej Alhogail",
+      "year": "2022",
+      "journal_or_publisher": "Behaviour & Information Technology, 41(14), 3138-3160; Informa UK Limited / Taylor & Francis",
+      "url": "https://doi.org/10.1080/0144929X.2021.1973106",
+      "doi": "10.1080/0144929X.2021.1973106",
+      "source_type": "مقالة محكمة - دراسة تبني تقنية",
+      "citation_text": "Alammary, A., Alshaikh, M., & Alhogail, A. (2022). The impact of the COVID-19 pandemic on the adoption of e-learning among academics in Saudi Arabia. Behaviour & Information Technology, 41(14), 3138-3160. https://doi.org/10.1080/0144929X.2021.1973106",
+      "verification_status": "verified",
+      "verified_at": "2026-09-25",
+      "verification_notes": "Crossref DOI record confirms exact title, all three authors and affiliations, DOI, journal, volume 41, issue 14, pages and publisher; print issue is 2022 and the online publication date is 2021-09-05. The title establishes Saudi academic adoption in a COVID-19 context; this source is not treated as evidence of student learning outcomes."
+    }
+  ],
+  "section_updates": {
+    "abstract": "يعرض هذا البحث خطة تطبيقية لدراسة العلاقة بين استخدام المنصات الرقمية وجودة التعلم لدى طلاب الجامعات السعودية، ويفصل بين المراجعة المنشورة والنتائج التي لا يمكن تقريرها قبل جمع بيانات الدراسة. تتناول مراجعة Martin وزميليه البحوث في التدريس والتعلم عبر الإنترنت خلال الفترة 2009-2018 (Martin et al., 2020)، كما تراجع Broadbent وPoon استراتيجيات التنظيم الذاتي والتحصيل في بيئات التعليم العالي عبر الإنترنت (Broadbent & Poon, 2015). وفي السياق السعودي، تناولت دراسة قبول أنظمة إدارة التعلم لدى طلاب جامعات سعودية، وهو موضوع قبول للنظام لا قياس لتحسن التعلم (Binyamin et al., 2020). تقترح الدراسة الحالية تصميماً وصفياً ارتباطياً وأداة تجمع بيانات مستقبلية بعد تحكيمها والحصول على الموافقات المطلوبة. لا توجد بيانات ميدانية لهذا البحث؛ لذلك تعرض أقسام التحليل والنتائج خطة متوقعة ولا تدعي نتائج تجريبية. تظل صلاحية أي استنتاج عن أثر المنصات مشروطة ببيانات موثقة ومصادر محددة النطاق.",
+    "introduction": "يتناول هذا البحث سؤالاً تطبيقياً عن استخدام المنصات الرقمية وجودة التعلم في التعليم الجامعي السعودي. وتشمل المراجعات المنشورة بحوث التدريس والتعلم عبر الإنترنت ضمن نطاقات زمنية وسياقات متعددة، ما يوفر سياقاً عاماً لمفاهيم التعليم الرقمي دون أن يثبت أثراً لمنصة بعينها (Martin et al., 2020). وفي السياق السعودي، درست Binyamin وزميلاه تقبل أنظمة إدارة التعلم لدى طلاب مسجلين في ثلاث جامعات، مع تركيز على عوامل قبول النظام؛ ولا تقيس دراستهم تحسناً في نواتج التعلم (Binyamin et al., 2020). كما تناول بحث سعودي آخر تبني التعليم الإلكتروني لدى الأكاديميين في سياق جائحة كوفيد-19، وهو مجتمع مختلف عن مجتمع الطلاب المستهدف هنا (Alammary et al., 2022). بناء على ذلك، تصاغ المشكلة الحالية لفحص مؤشرات الاستخدام وجودة التعلم بقياس مباشر، لا لاستنتاج أثر من مجرد شيوع التقنية أو قبولها.",
+    "problem": "تتمثل مشكلة هذا البحث في الحاجة إلى فحص العلاقة بين أنماط استخدام المنصات الرقمية ومؤشرات جودة التعلم لدى طلاب الجامعات السعودية بأدلة مباشرة، مع التمييز بين قبول نظام إدارة التعلم وبين تحسن المخرجات التعليمية. فقد تناولت دراسة Binyamin وزميليه عوامل قبول نظام إدارة التعلم لدى طلاب في ثلاث جامعات سعودية، لكنها لا تقيس تحسن جودة التعلم في هذا المشروع (Binyamin et al., 2020). كما أن دراسة تبني التعليم الإلكتروني بين الأكاديميين في السعودية تتناول مجتمعاً ومتغيراً مختلفين (Alammary et al., 2022). لذلك لا يفترض البحث أثراً إيجابياً مسبقاً؛ بل يحدد حاجة إلى بيانات قابلة للتحقق تربط ممارسات الاستخدام بمؤشرات تعلم معرفة إجرائياً.",
+    "importance": "تنبع أهمية هذا البحث من جمعه بين أدبيات التعليم عبر الإنترنت، ودراسة قبول أنظمة إدارة التعلم في جامعات سعودية، وسياق تبني التعليم الإلكتروني لدى الأكاديميين، مع عدم الخلط بين هذه الموضوعات وبين إثبات أثر على جودة التعلم (Martin et al., 2020; Binyamin et al., 2020; Alammary et al., 2022). علمياً، يحدد البحث المتغيرات والأسئلة التي تحتاج إلى اختبار محلي مباشر. وتطبيقياً، يقدم خطة لقياس الاستخدام ومؤشرات التعلم على نحو منفصل ثم تحليل علاقتهما. ولا يدعي هذا القسم أن المنصات حسنت النتائج فعلياً؛ فذلك يتطلب عينة وبيانات ميدانية لم تجمع بعد.",
+    "theoretical_framework": "ينظم الإطار المفاهيمي العلاقة بين خصائص استخدام المنصة، وممارسات التعلم التي يمكن رصدها، ومؤشرات جودة التعلم التي ستعرف إجرائياً قبل القياس. وتتناول مراجعة Martin وزميليه نطاق البحوث حول التدريس والتعلم عبر الإنترنت خلال 2009-2018، بينما تركز مراجعة Broadbent وPoon على استراتيجيات التنظيم الذاتي والتحصيل في بيئات التعليم العالي عبر الإنترنت (Martin et al., 2020; Broadbent & Poon, 2015). وفي السياق السعودي، تدرس Binyamin وزميلاه قبول أنظمة إدارة التعلم والعلاقة بين جودة المحتوى وسهولة الاستخدام المدركة؛ وتظل هذه مفاهيم قبول لا بديلاً عن قياس مخرجات التعلم (Binyamin et al., 2020). بناء على هذه الحدود، لا يفترض الإطار علاقة سببية، ويعامل الوصول إلى المحتوى والتفاعل والتنظيم الذاتي مؤشرات أو متغيرات مقترحة تحتاج إلى تعريف وقياس في الدراسة الحالية.",
+    "literature_review": "تضم المراجع المتحققة خمس دراسات متفاوتة في النطاق، ولذلك تعرض هنا بوصفها سياقات متكاملة لا أدلة متبادلة على الادعاء نفسه. راجعت Martin وSun وWestine بحوث التدريس والتعلم عبر الإنترنت المنشورة من 2009 إلى 2018، وهي مراجعة نطاقها أوسع من الجامعات السعودية (Martin et al., 2020). وراجعت Broadbent وPoon استراتيجيات التنظيم الذاتي والتحصيل الأكاديمي في بيئات التعليم العالي عبر الإنترنت، ما يدعم إدراج التنظيم الذاتي ضمن المفاهيم التي تستحق الفحص، ولا يحدد أثر منصة سعودية بعينها (Broadbent & Poon, 2015). أما Bernard وزملاؤه فحللوا تلويّاً أدبيات التعليم عن بعد مقارنة بالتدريس الصفي؛ وشمل تحليلهم 232 دراسة و688 مخرجاً، وذكر الملخص المنشور أحجام أثر إجمالية قريبة من الصفر مع تباين واسع، وهو ما يحذر من تعميم أثر موحد على جميع البيئات (Bernard et al., 2004). محلياً، فحصت دراسة Binyamin وزميليه قبول أنظمة إدارة التعلم لدى طلاب مسجلين في ثلاث جامعات سعودية؛ وقد ورد في ملخص الناشر أن 851 استجابة قدمت وجرى تحليل 833، وأن الدراسة تتعلق بقبول النظام لا بإثبات تحسن التعلم (Binyamin et al., 2020). وتناول Alammary وزميلاه تبني التعليم الإلكتروني بين الأكاديميين في السعودية في سياق جائحة كوفيد-19، وهو موضوع يخص الأكاديميين وسياق الطوارئ لا مخرجات الطلاب (Alammary et al., 2022). تتمثل الفجوة التي يعالجها التصميم الحالي في قياس العلاقة المقصودة مباشرة ضمن مجتمع الدراسة المقترح، بعد تحديد جودة التعلم إجرائياً وجمع بيانات مناسبة.",
+    "methodology": "يعتمد هذا البحث تصميماً وصفياً ارتباطياً مقترحاً لفحص العلاقة بين أبعاد الاستخدام ومؤشرات جودة التعلم بعد جمع البيانات، ولا يدعي تنفيذ هذا التصميم أو الحصول على نتائج. يدرج التنظيم الذاتي بوصفه مفهوماً مساعداً يمكن تعريفه وقياسه عند بناء الأداة، إذ تتناول مراجعة Broadbent وPoon استراتيجياته وعلاقتها بموضوع التحصيل في بيئات التعليم العالي عبر الإنترنت (Broadbent & Poon, 2015). ويجب فصل قياس قبول النظام عن قياس نواتج التعلم؛ فالدراسة السعودية التي راجعت قبول أنظمة إدارة التعلم ركزت على القبول وعوامل استخدام النظام (Binyamin et al., 2020). تقترح الخطة استبانة محكمة، مع مقابلات تفسيرية اختيارية بعد الموافقات الأخلاقية. ولا يثبت اختيار هذه الأدوات صلاحيتها قبل التحكيم والتجربة الاستطلاعية وتسجيل خصائص العينة الفعلية.",
+    "analysis": "يعرض التحليل هنا بوصفه خطة متوقعة لا نتيجة ميدانية. يربط السؤال الأول بوصف أنماط الاستخدام، والثاني بمؤشرات جودة التعلم المعرفة إجرائياً، والثالث باختبار العلاقة بينهما، والرابع بالعوامل السياقية المقاسة. ويجب عدم استخدام تقبل نظام إدارة التعلم بديلاً عن نتيجة تعلم؛ فالدراسة السعودية ذات الصلة تناولت قبول النظام، في حين أن أثره على جودة تعلم هذه العينة يحتاج إلى قياس مستقل (Binyamin et al., 2020). بعد جمع البيانات ستعرض لكل سؤال المتغيرات ومصدر البيانات والأسلوب الإحصائي وحدود التفسير. لا توجد بيانات رقمية حالياً، ولا تقدم هذه الفقرة نسباً أو دلالات إحصائية أو استنتاجات عن عينة لم تشارك.",
+    "discussion": "ستفسر المناقشة النتائج بعد ظهورها في ضوء سؤال الدراسة وتعريفاتها والحدود الفعلية للبيانات. وتدعو نتائج المراجعة التلوية التي أعدها Bernard وزملاؤه إلى الحذر من افتراض تفوق عام للتعليم عن بعد؛ إذ أشار ملخصهم إلى تباين واسع بين الدراسات وإلى اختلاف النتائج باختلاف نمط التعليم (Bernard et al., 2004). كما أن البحث السعودي في قبول أنظمة إدارة التعلم لا يثبت تحسن نواتج التعلم، ودراسة تبني التعليم الإلكتروني لدى الأكاديميين لا تمثل مجتمع الطلاب (Binyamin et al., 2020; Alammary et al., 2022). لذلك ستفصل المناقشة بين نتائج القبول والاستخدام والتحصيل، وستقصر أي استنتاج على ما تقيسه الأداة والعينة فعلياً. لا توجد نتائج ميدانية لهذا البحث حتى الآن.",
+    "findings": "لا يتضمن هذا البحث بيانات ميدانية، ولذلك لا يعرض نتائج عن طلاب الجامعات السعودية أو أرقاماً ونسباً مفترضة. تقتصر المخرجات الحالية على استكمال خطة بحث موثقة ببليوغرافياً بخمسة مصادر أكاديمية متحققة، وعلى تحديد الفرق بين دراسات قبول النظام والمراجعات العامة ومخرجات التعلم. النتائج التي أوردتها المصادر في مواضعها أعلاه تخص عينات تلك الدراسات وسياقاتها، ولا تنسب إلى عينة البحث المقترحة. بعد الحصول على الموافقات وجمع بيانات موثقة، ستعرض النتائج الفعلية بحسب الأسئلة والمؤشرات.",
+    "recommendations": "توصي الخطة بإضافة قياس مستقل لنواتج التعلم إلى جانب مؤشرات قبول المنصة واستخدامها، حتى لا يفسر القبول على أنه تحسن تعليمي؛ وهذا التمييز مهم عند قراءة الدراسة السعودية التي بحثت قبول أنظمة إدارة التعلم (Binyamin et al., 2020). كما تقترح تحديد مجتمع وعينة وفترة تنفيذ موثقة، وتحكيم الأداة، والإبلاغ عن حدود التصميم والبيانات. وتوصي بمقارنة الأدبيات بحسب سياقها وطريقة تقديم التعليم؛ فالمراجعة التلوية للتعليم عن بعد سجلت تبايناً واسعاً في النتائج لا يسمح بتعميم أثر واحد (Bernard et al., 2004). هذه توصيات لاستكمال البحث، وليست ادعاءً بفعاليتها الميدانية.",
+    "conclusion": "تقدم هذه النسخة خطة تطبيقية مسندة إلى خمسة مصادر متحققة، وتفصل بين أدلة مراجعة التعليم عبر الإنترنت، وبحوث التنظيم الذاتي، وقبول أنظمة إدارة التعلم في سياق سعودي، وتبني التعليم الإلكتروني لدى الأكاديميين (Martin et al., 2020; Broadbent & Poon, 2015; Binyamin et al., 2020; Alammary et al., 2022). وتبين مراجعة Bernard وزملائه أهمية عدم افتراض اتجاه أثر موحد بين أنماط التعليم (Bernard et al., 2004). لا تثبت هذه المصادر وحدها أثر المنصات الرقمية على جودة التعلم لدى عينة هذا المشروع، ولم تجمع بيانات ميدانية بعد. تبقى الإجابة عن سؤال الأثر معلقة إلى أن تنفذ الدراسة وتوثق نتائجها وحدودها.",
+    "references": "تقتصر قائمة المراجع على المصادر الخمسة المتحققة والمسجلة في قاعدة البحث.\n\nBernard, R. M., Abrami, P. C., Lou, Y., Borokhovski, E., Wade, A., Wozney, L., Wallet, P. A., Fiset, M., & Huang, B. (2004). How does distance education compare with classroom instruction? A meta-analysis of the empirical literature. Review of Educational Research, 74(3), 379-439. https://doi.org/10.3102/00346543074003379\n\nBinyamin, S. S., Rutter, M. J., & Smith, S. (2020). The moderating effect of gender and age on the students' acceptance of learning management systems in Saudi higher education. Knowledge Management & E-Learning: An International Journal, 12(1), 30-62. https://doi.org/10.34105/j.kmel.2020.12.003\n\nBroadbent, J., & Poon, W. L. (2015). Self-regulated learning strategies & academic achievement in online higher education learning environments: A systematic review. The Internet and Higher Education, 27, 1-13. https://doi.org/10.1016/j.iheduc.2015.04.007\n\nMartin, F., Sun, T., & Westine, C. D. (2020). A systematic review of research on online teaching and learning from 2009 to 2018. Computers & Education, 159, Article 104009. https://doi.org/10.1016/j.compedu.2020.104009\n\nAlammary, A., Alshaikh, M., & Alhogail, A. (2022). The impact of the COVID-19 pandemic on the adoption of e-learning among academics in Saudi Arabia. Behaviour & Information Technology, 41(14), 3138-3160. https://doi.org/10.1080/0144929X.2021.1973106"
+  }
+}

@@ -25,6 +25,6 @@ databases:
   - name: doctor-abu-thamer-db
     databaseName: doctor_abu_thamer
     user: doctor_abu_thamer
-    plan: 0.1c-256mb
+    plan: free
     region: oregon
     postgresMajorVersion: '16'
